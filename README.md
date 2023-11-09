@@ -32,33 +32,32 @@ If you want to edit task you need to put new Task data in field in the rubric `E
 
 ## Endpoints
 
-Get all tasks `Get/tasks`
+Get all tasks `Get` Endpoint `/tasks`
 ```shell
 http://localhost:8080/tasks
 ```
 
-Get One Task `Get/task/{id}`
+Get One Task `Get` Endpoint `/getTask/{id}`
 ```shell
 http://localhost:8080/getTask/{id}
 ```
 
-Add Task `Post/tasks`
+Add Task `Post` Endpoint `/tasks`
 ```shell
 http://localhost:8080/tasks
 ```
 
-Task Edit Form `Post/editTasks`
+Task Edit Form `Post` Endpoint `/editTask/{id}`
 ```shell
 http://localhost:8080/editTask/{id}
 ```
 
-Update Tasks `Put/editTasks/{id}`
+Update Tasks `Put` Endpoint `/updateTask/{id}`
 ```shell
 http://localhost:8080/updateTask/{id}
 ```
 
-
-Delete Task `Delete/tasks/{id}`
+Delete Task `Delete` Endpoint `/updateTask/{id}`
 ```shell
 http://localhost:8080/tasks/{id}
 ```
