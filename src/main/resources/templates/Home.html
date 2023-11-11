@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org" >
+    <html lang="pl">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8">
+            <title>Edit Task</title>
+        </head>
+        <!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org" >
+        <html lang="pl">
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="utf-8">
+            <!DOCTYPE html>
+            <html xmlns:th="http://www.thymeleaf.org" >
+            <html lang="pl">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta charset="utf-8">
+            </head>
+            <main>
+                <p>by #TiGOjava</p>
+                <h1>// TO DO LIST  </h1>
+                <div class="add-task-wrapper">
+                    <div class="div-top">
+                        <img height="35px" width="35px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172044258946068530/add-post.png?ex=655ee246&is=654c6d46&hm=52b8b66fff4cd3d8c4d85ace3b3f0b9f0e777176d546af7b78027dd4f9973bf7&" alt="">
+                        <h2>Add task</h2>
+                    </div>
+                    <form th:action="@{/tasks}" th:object="${Task}" method="post">
+                        <label>Task <input type="text" th:field="*{content}" /></label><br />
+                        <label>Creation Date <input class="date" type="text" th:field="*{creationDate}" /></label><br />
+                        <input class="submit-btn" type="submit" value="Save" />
+                    </form>
+                </div>
+
+
+                <div class="list-title">
+                    <img src="https://cdn.discordapp.com/attachments/1169402253526966323/1172034059480862791/task-list_1.png?ex=655ed8c7&is=654c63c7&hm=ee2118b747b6c2652fc4d2c6d5617900c300e49df64bdd50943ef54533fda416&" alt="">
+                    <h2>Task list</h2>
+                </div>
+                <div class="task-wrapper">
+                    <tr th:each="task : ${tasks}">
+                        <div class="tr-ct">
+
+                            <div class="div">
+                                <th class="title">ID</th><span> - </span>
+                                <td th:text="${task.id}"></td>
+                            </div>
+                            <div class="div">
+                                <th class="title">Task</th><span> - </span>
+                                <td th:text="${task.content}"></td>
+                            </div>
+                            <div class="div">
+                                <th class="title">Creation Time</th><span> -  </span>
+                                <td th:text="${task.creationDate}"></td>
+                            </div>
+                            <div class="buttons">
+                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/editTask/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172040957718446163/editing.png?ex=655edf33&is=654c6a33&hm=6221c73f81d87a16ee2116b4445adfb1ccbd85f9bf914e36ad720d2d817caa20&"></a>
+                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/tasks/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172040957424848966/bin.png?ex=655edf33&is=654c6a33&hm=78f311918226f506e565919005dc1452ab48d9d4b30d5a3c981a12f39fedc90f&"></a>
+                            </div>
+                        </div>>
+                    </tr>
+                </div>
+                </div>
+            </main>
+            </body>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                }
+
+                body {
+                    background-color: rgb(20,20,20);
+                    background-image: url(https://cdn.discordapp.com/attachments/1169402253526966323/1172040957991079979/image.webp?ex=655edf33&is=654c6a33&hm=2d76c269a766ca3cdeaa8f784a52f8f1f09271dce532f2b6d84fdd68d7450b73&);
+                    background-size: contain;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                main {
+                    padding: 50px;
+                }
+
+                h1 {
+                    color: #2de88e;
+                    font-size: 65px;
+                    font-weight: 900;
+                }
+
+                .tr-ct {
+                    padding: 30px;
+                    margin-top: 30px;
+                    color: white;
+                    border-radius: 10px;
+                }
+
+                h2 {
+                    color:white;
+                    font-size: 30px;
+                }
+
+                label {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                tr {
+                    display: flex;
+                }
+
+                input {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid #2de88e;
+                    color: white;
+                    margin-left: 20px;
+                    width: 200px;
+                    height: 20px;
+                    font-size: 18px;
+                    padding-bottom: 4px;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 30px;
+                    right: 30px;
+                    border: none;
+                    font-size: 30px;
+                    color: rgba(255, 255, 255, 0.229);
+                    background-color: transparent;
+                }
+
+                .date {
+                    color-scheme: dark;
+                }
+
+                .submit-btn {
+                    border: 1px solid white;
+                    border-radius: 1000px;
+                    height: 50px;
+                    width: 150px;
+                    font-size: 20px;
+                    margin: 20px auto;
+                    transition: 0.3s ease-in-out;
+                }
+
+                .submit-btn:hover {
+                    background-color: #2de88e;
+                    border-color: #2de88e;
+                    transform: scale(1.1);
+                    font-weight: 700;
+                    color: rgb(20,20,20);
+                }
+
+                .add-task-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    margin-top: 50px;
+                }
+
+                .list-title {
+                    margin-top: 40px;
+                    display: flex;
+                    gap: 8px;
+                }
+
+                .list-title img {
+                    height: 35px;
+                }
+
+                tr {
+                    border: 1px solid red;
+                    display: flex;
+                    color: white;
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-top: 30px;
+                    border: 1px solid white;
+                    padding: 30px;
+                    min-width: 400px;
+                    max-width: 700px;
+                    backdrop-filter: blur(5px);
+                    border-radius: 10px;
+                }
+
+                .div {
+                    font-size: 20px;
+                }
+
+                .div-top {
+                    display: flex;
+                    gap: 8px;
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    display: flex;
+                    gap: 10px;
+                }
+            </style>
+            </html>

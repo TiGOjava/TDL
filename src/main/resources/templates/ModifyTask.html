@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+</head>
+<body>
+<h1>//Edit Task</h1>
+<form th:action="@{/tasks}" th:object="${task}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Edit task: <input type="text" th:field="*{content}" /></label><br />
+    <input class="submit-btn" type="submit" value="Save" />
+</form>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+        background-color: rgb(20,20,20);
+        background-image: url(https://cdn.discordapp.com/attachments/1169402253526966323/1172040957991079979/image.webp?ex=655edf33&is=654c6a33&hm=2d76c269a766ca3cdeaa8f784a52f8f1f09271dce532f2b6d84fdd68d7450b73&);
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main {
+        padding: 100px;
+    }
+
+    h1 {
+        color: #2de88e;
+        font-size: 70px;
+        font-weight: 900;
+    }
+
+    label {
+        color: white;
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 20px;
+        outline: none;
+        color: white;
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #2de88e;
+    }
+
+    .submit {
+        margin-top: 40px;
+        border: none;
+        color: white;
+        width: 150px;
+        height: 50px;
+        margin: 20px auto;
+        border: 1px solid white;
+        border-radius: 10000px;
+        transition: 0.3s ease-in-out;
+        font-size: 20px;
+    }
+
+    .submit:hover {
+        background-color: #2de88e;
+        border-color: #2de88e;
+        transform: scale(1.1);
+        font-weight: 700;
+        color: rgb(20,20,20);
+    }
+    .submit-btn {
+        border: 1px solid white;
+        border-radius: 1000px;
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+        margin: 20px auto;
+        transition: 0.3s ease-in-out;
+    }
+</style>
+</html>

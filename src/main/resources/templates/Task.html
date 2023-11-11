@@ -1,0 +1,7 @@
+<form th:object="${task}" th:action="@{'/tasksupdate/' + ${task.id}}" method="post">
+    <input type="hidden" name="_method" value="put" />
+    <input type="hidden" th:field="*{id}" />
+    <label for="name">Nazwa:</label>
+    <input type="text" id="name" th:field="*{content}" />
+    <button type="submit">Aktualizuj element</button>
+</form>
