@@ -64,7 +64,7 @@ public class TaskController {
 
         updateTask.setContent(taskDetails.getContent());
         taskRepository.save(updateTask);
-        return "redirect:/ViewEditTask";
+        return "redirect:/tasks";
     }
 
     //Delete Task
