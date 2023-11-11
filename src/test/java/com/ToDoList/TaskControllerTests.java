@@ -18,12 +18,16 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.ui.Model;
+
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -43,6 +47,9 @@ public class TaskControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Mock
+    private Model model;
 
     @BeforeEach
     public void setup() {
@@ -93,6 +100,23 @@ public class TaskControllerTests {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void testShowEditForm() {
+
+        Long taskId = 1L;
+        Task task = new Task();
+        task.setId(taskId);
+        when(taskService.getTaskById(taskId)).thenReturn(task);
+
+        String viewName = taskController.showEditForm(taskId, model);
+
+        assertEquals("ModifyTask", viewName);
+
+        verify(model, times(1)).addAttribute(eq("task"), any(Task.class));
+
+        verify(taskService, times(1)).getTaskById(eq(taskId));
+    }
+
 
 
     // Test save task
@@ -123,7 +147,7 @@ public class TaskControllerTests {
         mockMvc.perform(MockMvcRequestBuilders.put("/updateTask/" + taskId)
                         .contentType("application/json")
                         .content(taskDetailsJson))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(MockMvcResultMatchers.status().is3xxRedirection());
     }
 
 
