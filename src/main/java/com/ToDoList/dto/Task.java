@@ -1,14 +1,12 @@
 package com.ToDoList.dto;
 
 
-import com.ToDoList.service.TaskService;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDateTime;
 
 
