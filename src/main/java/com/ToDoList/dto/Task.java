@@ -25,7 +25,7 @@ public class Task {
     private Long id;
     private String content;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime creationDate;
+    private LocalDateTime creationDate = LocalDateTime.now();
 
 }
 
