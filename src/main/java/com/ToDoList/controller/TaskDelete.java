@@ -1,19 +1,12 @@
 package com.ToDoList.controller;
 
-import com.ToDoList.dto.Task;
-import com.ToDoList.exception.TaskNotFoundException;
-import com.ToDoList.repository.TaskRepository;
 import com.ToDoList.service.TaskService;
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
-public class TaskDelete {
+public class TaskDelete{
 
 
     @Autowired
