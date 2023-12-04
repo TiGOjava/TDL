@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
-<html lang="pl">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-
     <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org" >
     <html lang="pl">
@@ -35,7 +28,7 @@
                 <h1>// TO DO LIST  </h1>
                 <div class="add-task-wrapper">
                     <div class="div-top">
-                        <img height="35px" width="35px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172044258946068530/add-post.png?ex=655ee246&is=654c6d46&hm=52b8b66fff4cd3d8c4d85ace3b3f0b9f0e777176d546af7b78027dd4f9973bf7&" alt="">
+                        <img height="35px" width="35px" src="https://cdn.discordapp.com/attachments/1038606888209756190/1173026251355738122/add-post.png?ex=656274d4&is=654fffd4&hm=c06e2eb44c32badb2cb14ff9ba9f49304e254a234c246af06ec223203818d0fe&" alt="">
                         <h2>Add task</h2>
                     </div>
                     <form th:action="@{/tasks}" th:object="${Task}" method="post">
@@ -47,7 +40,7 @@
 
 
                 <div class="list-title">
-                    <img src="https://cdn.discordapp.com/attachments/1169402253526966323/1172034059480862791/task-list_1.png?ex=655ed8c7&is=654c63c7&hm=ee2118b747b6c2652fc4d2c6d5617900c300e49df64bdd50943ef54533fda416&" alt="">
+                    <img src="https://cdn.discordapp.com/attachments/1038606888209756190/1173026252442050671/task-list_1.png?ex=656274d4&is=654fffd4&hm=485d31330dda39be94cd10a19338cf4c1de2ed5b1bb770816e189aed698f8b7a&" alt="">
                     <h2>Task list</h2>
                 </div>
                 <div class="task-wrapper">
@@ -67,8 +60,8 @@
                                 <td th:text="${task.creationDate}"></td>
                             </div>
                             <div class="buttons">
-                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/editTask/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172040957718446163/editing.png?ex=655edf33&is=654c6a33&hm=6221c73f81d87a16ee2116b4445adfb1ccbd85f9bf914e36ad720d2d817caa20&"></a>
-                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/tasks/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1169402253526966323/1172040957424848966/bin.png?ex=655edf33&is=654c6a33&hm=78f311918226f506e565919005dc1452ab48d9d4b30d5a3c981a12f39fedc90f&"></a>
+                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/editTask/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1038606888209756190/1173026251859042355/editing.png?ex=656274d4&is=654fffd4&hm=a065605b6de2796051247b0c73d4091d417276e2427fb57791551db49a109b22&"></a>
+                                <td><a type="button" class="btn btn-secondary btn-sm" th:href="@{/tasks/{id}(id=${task.id})}"><img height="25px" src="https://cdn.discordapp.com/attachments/1038606888209756190/1173026251607392337/bin.png?ex=656274d4&is=654fffd4&hm=9837b3eeb4df45eb8b38cba461379e5a199b4285e13004dc610a90ebcf341a95&"></a>
                             </div>
                         </div>>
                     </tr>
@@ -88,7 +81,7 @@
 
                 body {
                     background-color: rgb(20,20,20);
-                    background-image: url(https://cdn.discordapp.com/attachments/1169402253526966323/1172040957991079979/image.webp?ex=655edf33&is=654c6a33&hm=2d76c269a766ca3cdeaa8f784a52f8f1f09271dce532f2b6d84fdd68d7450b73&);
+                    background-image: url(https://cdn.discordapp.com/attachments/1038606888209756190/1173026577219584050/image.webp?ex=65627521&is=65500021&hm=39f1b790ee3ed7ab0d84ba5d7cfee156f0401d998252c61503887bf8a30f3129&);
                     background-size: contain;
                     display: flex;
                     justify-content: center;
@@ -147,8 +140,8 @@
 
                 p {
                     position: absolute;
-                    bottom: 30px;
-                    right: 30px;
+                    top: 50px;
+                    right: 50px;
                     border: none;
                     font-size: 30px;
                     color: rgba(255, 255, 255, 0.229);
